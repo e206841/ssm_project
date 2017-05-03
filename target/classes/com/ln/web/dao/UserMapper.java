@@ -1,14 +1,14 @@
 package com.ln.web.dao;
 
 import com.ln.web.model.User;
-import com.ln.web.model.UserTableExample;
+import com.ln.web.model.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
-    int countByExample(UserTableExample example);
+    int countByExample(UserExample example);
 
-    int deleteByExample(UserTableExample example);
+    int deleteByExample(UserExample example);
 
     int deleteByPrimaryKey(Integer id);
 
@@ -16,13 +16,13 @@ public interface UserMapper {
 
     int insertSelective(User record);
 
-    List<User> selectByExample(UserTableExample example);
+    List<User> selectByExample(UserExample example);
 
     User selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") User record, @Param("example") UserTableExample example);
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 
-    int updateByExample(@Param("record") User record, @Param("example") UserTableExample example);
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
     int updateByPrimaryKeySelective(User record);
 

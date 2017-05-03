@@ -3,14 +3,14 @@ package com.ln.web.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserTableExample {
+public class UserExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public UserTableExample() {
+    public UserExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
