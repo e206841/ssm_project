@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ln.web.model.User;
 import com.ln.web.service.UserService;
@@ -15,7 +16,12 @@ import com.ln.web.service.UserService;
 public class UserController {
 	@Resource	
 	private UserService userService;
-	
+	@RequestMapping(value="/login")
+	public ModelAndView  login(User user){
+		ModelAndView mav=new ModelAndView();  
+		mav.setViewName("success");
+		return 	mav;
+	}
 	@RequestMapping(value="/list")
 	public Object getList(){
 		
