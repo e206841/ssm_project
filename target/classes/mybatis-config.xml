@@ -8,5 +8,4 @@
         <package name="com.ln.web.model"/>
         <package name="com.ln.web.enums"/>
     </typeAliases>
-
 </configuration>
