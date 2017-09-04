@@ -10,6 +10,7 @@
 		<param-value>
 			 classpath*:applicationContext.xml 
 			 classpath*:spring-mq.xml
+			<!--  classpath*:activiti.cfg.xml -->
 		</param-value>
 	</context-param>
 	<listener>
