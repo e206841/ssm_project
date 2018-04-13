@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="SubjectTask" name="专题任务" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <userTask id="SUBJECT_TASK_SEND" name="总部安全管理员下发任务" activiti:async="true"></userTask>
+    <userTask id="SUBJECT_TASK_DISTR" name="安全管理员分配任务"></userTask>
+    <userTask id="ASSEST_ANALYZE" name="安全员资产脆弱性分析"></userTask>
+    <userTask id="SUBJECT_TASK_VALIDATE" name="安全管理员验证"></userTask>
+    <userTask id="SUBJECT_TASK_RECHECK" name="总部安全管理员复查"></userTask>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="SUBJECT_TASK_SEND"></sequenceFlow>
+    <sequenceFlow id="flow2" sourceRef="SUBJECT_TASK_SEND" targetRef="SUBJECT_TASK_DISTR"></sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="SUBJECT_TASK_DISTR" targetRef="ASSEST_ANALYZE"></sequenceFlow>
+    <sequenceFlow id="flow4" name="验证通过" sourceRef="ASSEST_ANALYZE" targetRef="SUBJECT_TASK_VALIDATE"></sequenceFlow>
+    <sequenceFlow id="flow5" sourceRef="SUBJECT_TASK_VALIDATE" targetRef="SUBJECT_TASK_RECHECK"></sequenceFlow>
+    <sequenceFlow id="flow6" sourceRef="SUBJECT_TASK_RECHECK" targetRef="endevent1"></sequenceFlow>
+    <sequenceFlow id="flow7" name="验证不通过" sourceRef="SUBJECT_TASK_VALIDATE" targetRef="ASSEST_ANALYZE"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_SubjectTask">
+    <bpmndi:BPMNPlane bpmnElement="SubjectTask" id="BPMNPlane_SubjectTask">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="290.0" y="50.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SUBJECT_TASK_SEND" id="BPMNShape_SUBJECT_TASK_SEND">
+        <omgdc:Bounds height="65.0" width="105.0" x="255.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SUBJECT_TASK_DISTR" id="BPMNShape_SUBJECT_TASK_DISTR">
+        <omgdc:Bounds height="65.0" width="105.0" x="255.0" y="220.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="ASSEST_ANALYZE" id="BPMNShape_ASSEST_ANALYZE">
+        <omgdc:Bounds height="65.0" width="105.0" x="255.0" y="320.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SUBJECT_TASK_VALIDATE" id="BPMNShape_SUBJECT_TASK_VALIDATE">
+        <omgdc:Bounds height="55.0" width="105.0" x="255.0" y="430.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="SUBJECT_TASK_RECHECK" id="BPMNShape_SUBJECT_TASK_RECHECK">
+        <omgdc:Bounds height="65.0" width="105.0" x="255.0" y="520.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="290.0" y="630.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="307.0" y="85.0"></omgdi:waypoint>
+        <omgdi:waypoint x="307.0" y="120.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="307.0" y="185.0"></omgdi:waypoint>
+        <omgdi:waypoint x="307.0" y="220.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="307.0" y="285.0"></omgdi:waypoint>
+        <omgdi:waypoint x="307.0" y="320.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="307.0" y="385.0"></omgdi:waypoint>
+        <omgdi:waypoint x="307.0" y="430.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="100.0" x="310.0" y="399.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="307.0" y="485.0"></omgdi:waypoint>
+        <omgdi:waypoint x="307.0" y="520.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="307.0" y="585.0"></omgdi:waypoint>
+        <omgdi:waypoint x="307.0" y="630.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="360.0" y="457.0"></omgdi:waypoint>
+        <omgdi:waypoint x="443.0" y="457.0"></omgdi:waypoint>
+        <omgdi:waypoint x="443.0" y="352.0"></omgdi:waypoint>
+        <omgdi:waypoint x="360.0" y="352.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="100.0" x="459.0" y="390.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

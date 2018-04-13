@@ -108,7 +108,6 @@
         <aspectj.version>1.6.12</aspectj.version>
         <netty.version>4.0.18.Final</netty.version>
         <hibernate.validator.version>5.1.1.Final</hibernate.validator.version>
-        <activiti>5.15.1</activiti>  
     </properties>
 
     <dependencies>
@@ -406,21 +405,14 @@
 			<artifactId>amqp-client</artifactId>
 			<version>3.6.6</version>
 		</dependency>
+	
+		<!-- 网络爬虫 -->
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.10.3</version>
+		</dependency>
 		
-		 <!-- activiti依赖 -->  
-	    <dependency>  
-	        <groupId>org.activiti</groupId>  
-	        <artifactId>activiti-engine</artifactId>  
-	        <version>${activiti}</version>  
-	    </dependency>  
-	    
-	    <!-- activiti 与 Spring 集成 -->  
-	    <dependency>  
-	        <groupId>org.activiti</groupId>  
-	        <artifactId>activiti-spring</artifactId>  
-	        <version>${activiti}</version>  
-	    </dependency>  
-
     </dependencies>
   
   
